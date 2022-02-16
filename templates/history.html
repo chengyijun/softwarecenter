@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>历史版本</title>
+    <link rel="stylesheet" href="{% static "css/css.css" %}">
+    <link rel="stylesheet" href="{% static "js/style.css" %}" type="text/css" media="all">
+</head>
+<body>
+<div class="content">
+    <div id="bg">
+        <canvas width="1920" height="937"></canvas>
+        <canvas width="1920" height="937"></canvas>
+        <canvas width="1920" height="937"></canvas>
+    </div>
+    <div class="head">
+        <div class="h-con w_1200">
+            <div class="head_l">
+                <a href="http://www.dentafilm.cn/"><img src="{% static "img/logo.png" %}"/></a>
+            </div>
+            <div class="head_r">
+                欢迎访问
+            </div>
+        </div>
+    </div>
+    <div class="main_fy w_1200">
+        <div class="main_fy_con">
+            <div class="main_fy_div">
+                <div class="main_list">
+                    {% for file_info in file_infos %}
+                        <p class="main_lis">
+                            {{ file_info.filename }}<span class="main_li_left">{{ file_info.filectime }}</span><a
+                                href="{% url "app:download" file_info.filename %}"
+                                class="main_li_rig">下载</a>
+                        </p>
+                    {% endfor %}
+                </div>
+                {#                <div class="page">#}
+                {#                    <a href="javascript:" class="page_l def"><img src="{% static "img/left.svg" %}"/></a>#}
+                {#                    <a href="javascript:" class="page_n on">1</a>#}
+                {#                    <a href="javascript:" class="page_n">2</a>#}
+                {#                    <a href="javascript:" class="page_n">3</a>#}
+                {#                    <a href="javascript:" class="page_n">4</a>#}
+                {#                    <a href="javascript:" class="page_n">5</a>#}
+                {#                    <span class="page_c">...</span>#}
+                {#                    <a href="javascript:" class="page_n">100</a>#}
+                {#                    <a href="javascript:" class="page_r"><img src="{% static "img/right.svg" %}"/></a>#}
+                {#                </div>#}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static "js/jquery-1.10.2.js" %}"></script>
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- //Jquery -->
+
+<!-- effect js -->
+<script src="{% static "js/canva_moving_effect.js" %}"></script>
+
+</body>
+</html>

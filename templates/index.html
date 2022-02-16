@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>软件中心</title>
+    <link rel="stylesheet" href="{% static "css/css.css" %}">
+    <link rel="stylesheet" href="{% static "js/style.css" %}" type="text/css" media="all">
+</head>
+<body>
+<div class="content">
+    <div id="bg">
+        <canvas width="1920" height="937"></canvas>
+        <canvas width="1920" height="937"></canvas>
+        <canvas width="1920" height="937"></canvas>
+    </div>
+    <div class="head">
+        <div class="h-con w_1200">
+            <div class="head_l">
+                <a href="http://www.dentafilm.cn/"><img src="{% static "img/logo.png" %}"/></a>
+            </div>
+            <div class="head_r">
+                欢迎访问
+            </div>
+        </div>
+    </div>
+    <div class="main w_1200">
+        <div class="main_l">
+            <h1 class="main_lh1 top1">合肥登特菲医疗</h1>
+            <h3 class="main_lh3 top1">掌握自己的口腔健康</h3>
+            <div class="main_li cen1">
+                <span class="main_li_s">检测牙齿</span>
+                <span class="main_li_s">科学牙管理</span>
+                <span class="main_li_s">监测牙状态</span>
+                <span class="main_li_s">健康牙提醒</span>
+            </div>
+            <div class="main_div bot1">
+                <a href="{% url "app:history" %}" class="main_down botq1">立即下载</a>
+                <a href="{% url "app:history" %}" class="main_down1 botq2 ml15">历史版本</a>
+            </div>
+        </div>
+        <div class="main_r bot1">
+            <img src="{% static "img/pic.png" %}"/>
+        </div>
+    </div>
+</div>
+<script src="{% static "js/jquery-1.10.2.js" %}"></script>
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- //Jquery -->
+
+<!-- effect js -->
+<script src="{% static "js/canva_moving_effect.js" %}"></script>
+<script>
+    setTimeout(function () {
+        $(".main_r img").addClass('pic')
+        $(".top1").addClass('top')
+        $(".cen1").addClass('cen')
+        $(".bot1").addClass('bot')
+        $(".botq1").addClass('botq')
+        $(".botq2").addClass('botq3')
+    }, 300)
+</script>
+</body>
+</html>
