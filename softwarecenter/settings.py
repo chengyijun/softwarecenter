@@ -117,6 +117,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics"),
 ]
+# 配置收集静态文件的目录
+STATIC_ROOT = os.path.join(BASE_DIR, "static_total")
+
+UPLOADS_ROOT = os.path.join(BASE_DIR, "uploads")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
